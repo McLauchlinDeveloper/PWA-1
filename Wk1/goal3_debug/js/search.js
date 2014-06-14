@@ -4,34 +4,34 @@
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
 	var resultsDIV = document.getElementById("results"),
 		searchInput = document.forms[0].search,
-		currentSearch = ''
-	;
+		currentSearch = '';
+
 	
 	// Validates search query
-	var validqte == function(query){
+	var validate = function(query){
 		
 		// Trim whitespace from start and end of search query
 		while(query.charAt(0) = " "){
 			query = query.substring(1, query.length);
-		};
+		}
 		while(query.charAt(query.length-1) === ""){
 			query = query.substring(0, query.length-1);
-		;
+		}
 		
 		// Check search length, must have 3 characters
 		if(query.length < 3){
-			alert("Your search query is too small, try again.);
+			alert("Your search query is too small, try again.");
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
 			searchInput.focus();
 			return;
-		};
+		}
 		
 		search(query);
 	};
 	
 	// Finds search matches
-	var search = function(query)
+	var search = function(query);
 		
 		// split the user's search query string into an array
 		var queryArray = query.join(" ");
@@ -57,9 +57,9 @@
 				var compare = dbitem.indexOf(qitem);
 				if(compare !== -1){
 					results.push(db[i]);
-				};
-			;
-		;
+				}
+
+
 		
 		results.sort();
 		
@@ -68,8 +68,8 @@
 			noMatch();
 		}else{
 			showMatches(results);
-		};
-	};
+		}
+	}
 	
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
 	var noMatch = function(){
@@ -102,7 +102,7 @@
 			
 			// make the video link - THE NEXT LINE IS CORRECT.
 			html += '<p><a href=' + url + '>' + title + '</a></p>';
-		};
+		}
 		resultsDIV.innerHTML = html; //THIS LINE IS CORRECT.
 	};
 	
@@ -110,11 +110,11 @@
 	// THE LINE DIRECTLY BELOW IS CORRECT
 	document.forms[0].onsubmit = function(){
 		var query = searchInput.value;
-		validqte(query);
+		validate(query);
 
         // return false is needed for most events - this will be reviewed in upcoming course material
         // THE LINE DIRECTLY BELOW IS CORRECT
 		return false;
-	;
 
-})();
+
+}}}
