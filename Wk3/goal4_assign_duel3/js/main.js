@@ -46,11 +46,11 @@ var fighters =[{
 
 
             //random formula is - Math.floor(Math.random() * (max - min) + min);
-            //this block of code is used to compute damage
+            //puts damage calculation into an easy to use variable
             var f1 = Math.floor(Math.random()*fighters[0].damage + fighters[0].damage *.5);
             var f2 = Math.floor(Math.random()*fighters[1].damage + fighters[1].damage *.5);
 
-            //inflict damage
+
             //this assigns damage to the players health amount
             fighters[0]-=f1;
             fighters[1]-=f2;
@@ -66,16 +66,17 @@ var fighters =[{
             //uses logic to count rounds up until a winner is decided and display the result.
             if (result==="no winner")
             {
-                //counts round up from 0 consecutively
+                //if there is no winner yet, this displays current health
                 fighters1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
                 fighters2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
 
             } else{
+                //if there is a winner this
                 fighters1_txt.innerHTML = result;
                 fighters2_txt.innerHTML = "";
-                //breaking loop to allow other things to happen
+                //ends listening event, you need this because we add an event listener
                 button.removeEventListener("click", fight, false);
-
+//this occurs after a winner is found
                 document.querySelector('.buttonblue').innerHTML = 'DONE!!!';
             }
 
@@ -88,10 +89,10 @@ var fighters =[{
         {
             result = "You Both Die";
         } else if(fighters[0].health<1){
-            result =fighters[1].name+" WINS!!!"
+            result =fighters[1].name+" WINS!!!";
         } else if (fighters[1].health<1)
         {
-            result = fighters[0].name+" WINS!!!"
+            result = fighters[0].name+" WINS!!!";
         }
        return result;
     }
