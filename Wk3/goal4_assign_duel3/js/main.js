@@ -47,8 +47,8 @@ var fighters =[{
 
             //random formula is - Math.floor(Math.random() * (max - min) + min);
             //this block of code is used to compute damage
-            var f1 = Math.floor(Math.random()*fighters[0].damage + fighters[0].damage *.5;
-            var f2 = Math.floor(Math.random()*fighters[1].damage + fighters[1].damage *.5;
+            var f1 = Math.floor(Math.random()*fighters[0].damage + fighters[0].damage *.5);
+            var f2 = Math.floor(Math.random()*fighters[1].damage + fighters[1].damage *.5);
 
             //inflict damage
             //this assigns damage to the players health amount
@@ -79,7 +79,7 @@ var fighters =[{
                 document.querySelector('.buttonblue').innerHTML = 'DONE!!!';
             }
 
-          
+
     }
 // function deciding and displaying a winner based on amount of health
     function winnerCheck(){
