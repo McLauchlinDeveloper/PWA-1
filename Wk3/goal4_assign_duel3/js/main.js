@@ -10,14 +10,14 @@ Corey McLauchlin
 (function(){
 
     console.log("FIGHT!!!");
-
+//elements are pulled in for both fighters by id
     var fighters1_txt = document.getElementById("kabal");
     var fighters2_txt = document.getElementById("kratos");
     var round_txt = document.getElementById("round");
     var button = document.getElementById("fight_btn");
-
+//this add an event listener for when the button is clicked
     button.addEventListener("click", fight, false);
-
+// these are the fighters into objects for manipulation of DOM
 var fighters =[{
 
     name: "Kabal",
@@ -33,7 +33,7 @@ var fighters =[{
         }];
 
     var round = 1;
-
+//manipulation of DOM elements and display of character stats
    round_txt.innerHTML = "Click fight button";
    fighters1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
    fighters2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
@@ -44,8 +44,7 @@ var fighters =[{
         fighters1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
         fighters2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
 
-        for (var i = 0; i < 10; i++)
-        {
+
             //random formula is - Math.floor(Math.random() * (max - min) + min);
             //this block of code is used to compute damage
             var f1 = Math.floor(Math.random()*fighters[0].damage + fighters[0].damage *.5;
@@ -80,7 +79,7 @@ var fighters =[{
                 document.querySelector('.buttonblue').innerHTML = 'DONE!!!';
             }
 
-          }
+          
     }
 // function deciding and displaying a winner based on amount of health
     function winnerCheck(){
