@@ -58,9 +58,10 @@ var fighters =[{
             console.log(fighters[0].health, fighters[1].health);
 
             //check for victor
-//this variable calls a function which uses logic to decide a winner
+//this variable holds a function which uses logic to decide a winner
             var result = winnerCheck();
             console.log(result);
+        //this displays round number displays results and then counts up a round
             round_txt.innerHTML = "ROUND #" + round + " Results:";
             round++;
             //uses logic to count rounds up until a winner is decided and display the result.
